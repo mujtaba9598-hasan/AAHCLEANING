@@ -24,7 +24,7 @@
     '<header class="site-nav fixed top-0 inset-x-0 z-50">' +
       '<div class="container-rail flex items-center justify-between h-20">' +
         '<a href="index.html" class="flex items-center gap-3" aria-label="Abdul Aziz Habib Cleaning Service — home">' +
-          '<img src="assets/logo/logo.png" alt="Abdul Aziz Habib logo" class="h-11 w-11 rounded-full bg-white object-contain p-1">' +
+          '<img src="assets/logo/logo-icon.png" alt="Abdul Aziz Habib logo" class="h-10 w-auto">' +
           '<span class="leading-tight"><span class="font-display text-lg block">Abdul Aziz Habib</span>' +
           '<span class="text-[10px] uppercase tracking-[0.22em] text-orange2">Cleaning Service · RAK</span></span>' +
         '</a>' +
@@ -53,7 +53,7 @@
       '<div class="container-rail py-16">' +
         '<div class="grid md:grid-cols-4 gap-10">' +
           '<div class="md:col-span-1">' +
-            '<div class="flex items-center gap-3 mb-5"><img src="assets/logo/logo.png" alt="Abdul Aziz Habib logo" class="h-12 w-12 rounded-lg bg-white object-contain p-1.5">' +
+            '<div class="flex items-center gap-3 mb-5"><img src="assets/logo/logo-icon.png" alt="Abdul Aziz Habib logo" class="h-12 w-auto">' +
             '<span class="font-display text-lg leading-tight">Abdul Aziz Habib<br><span class="text-[10px] uppercase tracking-[0.2em] text-orange2 font-sans">Cleaning Service</span></span></div>' +
             '<p class="text-sm muted">Premium residential, commercial &amp; post-construction cleaning in Ras Al Khaimah and Dubai. We don\'t just clean — we restore.</p></div>' +
           '<div><h3 class="font-display text-lg mb-4">Quick links</h3><ul class="space-y-2 text-sm muted">' +

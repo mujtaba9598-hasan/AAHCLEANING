@@ -319,7 +319,7 @@ select:focus-visible, textarea:focus-visible {
   display: grid; place-items: center; transition: opacity .55s ease, visibility .55s ease; }
 #preloader.pl-out { opacity: 0; visibility: hidden; }
 .pl-inner { width: min(90vw, 440px); text-align: center; }
-.pl-logo { height: 56px; width: auto; margin: 0 auto 1.75rem; display: block; background: #fff; border-radius: .7rem; padding: .45rem; box-shadow: 0 16px 40px -16px var(--glow); }
+.pl-logo { height: 84px; width: auto; margin: 0 auto 1.75rem; display: block; filter: drop-shadow(0 14px 36px var(--glow)); }
 .pl-stage { position: relative; height: 120px; margin-bottom: 1.4rem; overflow: hidden; }
 .pl-floor { position: absolute; left: 0; right: 0; bottom: 16px; height: 10px; border-radius: 5px;
   background: linear-gradient(90deg, #182746, #0f1932); overflow: hidden; box-shadow: inset 0 1px 0 rgba(255,255,255,.05); }
