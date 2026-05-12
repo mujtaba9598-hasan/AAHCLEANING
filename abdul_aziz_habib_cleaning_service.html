@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Aziz Habib Cleaning Service | Premium Cleaning Services in Ras Al Khaimah</title>
+    <meta name="description" content="Abdul Aziz Habib Cleaning Service - Professional cleaning services in Ras Al Khaimah & Dubai. Villas, buildings, sofas, carpets, floors, windows & more. Call 056 958 6168 or WhatsApp 055 878 6055.">
+    <link rel="icon" href="logo-icon.png">
+    <link rel="apple-touch-icon" href="logo-icon.png">
+    <meta property="og:title" content="Abdul Aziz Habib Cleaning Service — Ras Al Khaimah">
+    <meta property="og:description" content="Premium cleaning services in Ras Al Khaimah & Dubai — villas, sofas, carpets, floors, windows, glass and more.">
+    <meta property="og:image" content="logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-space': '#050A18',
+                        'deep-space-light': '#0A1429',
+                        'aluminum': '#E5E5E5',
+                        'aluminum-dark': '#B8B8B8',
+                        'cyan-clean': '#00D4FF',
+                        'cyan-glow': '#00F0FF',
+                        'cyan-dim': '#0088AA',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --deep-space: #050A18;
+            --deep-space-light: #0A1429;
+            --aluminum: #E5E5E5;
+            --cyan-clean: #00D4FF;
+            --cyan-glow: #00F0FF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-space);
+            color: var(--aluminum);
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Header */
+        .glass-header {
+            background: rgba(5, 10, 24, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.08);
+        }
+
+        /* Wipe Clean Mask Effect */
+        .wipe-reveal {
+            clip-path: inset(0 100% 0 0);
+            opacity: 0;
+        }
+
+        .wipe-reveal.revealed {
+            clip-path: inset(0 0% 0 0);
+            opacity: 1;
+            transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+        }
+
+        /* Cyan Glow Effects */
+        .cyan-glow {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.1);
+        }
+
+        .cyan-text-glow {
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 212, 255, 0.2);
+        }
+
+        /* Button Peak-End Animation */
+        .btn-morph {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .btn-morph.morphing {
+            width: 56px !important;
+            border-radius: 50% !important;
+            padding: 0 !important;
+        }
+
+        .btn-morph .btn-text,
+        .btn-morph .btn-icon,
+        .btn-morph .btn-success {
+            transition: all 0.4s ease;
+        }
+
+        .btn-morph.morphing .btn-text { opacity: 0; transform: scale(0); }
+        .btn-morph.morphing .btn-icon { opacity: 1; transform: scale(1) rotate(0deg); }
+        .btn-morph.success .btn-icon { opacity: 0; transform: scale(0); }
+        .btn-morph.success .btn-success { opacity: 1; transform: scale(1); }
+
+        .btn-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0) rotate(-180deg);
+        }
+
+        .btn-success {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        /* Sparkle Animation */
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+            25% { transform: scale(1.3) rotate(90deg); filter: brightness(1.5); }
+            50% { transform: scale(0.9) rotate(180deg); filter: brightness(2); }
+            75% { transform: scale(1.2) rotate(270deg); filter: brightness(1.5); }
+        }
+
+        .sparkle-anim {
+            animation: sparkle 0.8s ease-in-out;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid #25D366;
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 280px;
+            gap: 16px;
+        }
+
+        .bento-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            background: var(--deep-space-light);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .bento-item:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .bento-item.large { grid-column: span 2; grid-row: span 2; }
+        .bento-item.wide { grid-column: span 2; }
+        .bento-item.tall { grid-row: span 2; }
+
+        /* Service Card Hover */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(5, 10, 24, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-card:hover .service-img {
+            transform: scale(1.1);
+        }
+
+        .service-img {
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Navigation Link Underline */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cyan-clean);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Page Transition */
+        .page-section {
+            display: none;
+            opacity: 0;
+        }
+
+        .page-section.active {
+            display: block;
+            animation: fadeInPage 0.6s ease forwards;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Particles Canvas */
+        #particles-canvas {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--deep-space); }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 212, 255, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 212, 255, 0.5); }
+
+        /* Stat Counter */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Footer Service Suggestion */
+        .suggestion-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .suggestion-card:hover {
+            border-color: rgba(0, 212, 255, 0.4);
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        /* Form Input Focus */
+        .form-input {
+            background: rgba(10, 20, 41, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--cyan-clean);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+            outline: none;
+        }
+
+        /* Responsive Bento */
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 220px;
+            }
+            .bento-item.large { grid-column: span 2; grid-row: span 2; }
+        }
+
+        @media (max-width: 640px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+            .bento-item.large,
+            .bento-item.wide,
+            .bento-item.tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #E5E5E5 0%, #00D4FF 50%, #E5E5E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Line decoration */
+        .line-deco {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cyan-clean), transparent);
+        }
+
+        /* Image overlay gradient */
+        .img-overlay {
+            background: linear-gradient(180deg, rgba(5,10,24,0.3) 0%, rgba(5,10,24,0.95) 100%);
+        }
+
+        /* Process step connector */
+        .step-connector {
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--cyan-clean), transparent);
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .step-connector { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== GLASSMORPHISM HEADER ==================== -->
+    <header id="main-header" class="glass-header fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="nav-logo flex items-center gap-3 group" data-nav>
+                    <img src="logo-icon.png" alt="Abdul Aziz Habib Cleaning Service logo" class="h-11 w-auto">
+                    <div class="hidden sm:block">
+                        <div class="text-lg font-bold text-aluminum leading-tight">Abdul Aziz Habib</div>
+                        <div class="text-xs text-cyan-clean tracking-widest uppercase">Cleaning Service</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="nav-link text-sm font-medium text-aluminum/80 hover:text-cyan-clean transition-colors" data-nav>Home</a>
+                    <a href="#about" class="nav-link text-sm font-medium text-aluminum/80 hover:text-cyan-clean transition-colors" data-nav>About</a>
+                    <a href="#services" class="nav-link text-sm font-medium text-aluminum/80 hover:text-cyan-clean transition-colors" data-nav>Services</a>
+                    <a href="#gallery" class="nav-link text-sm font-medium text-aluminum/80 hover:text-cyan-clean transition-colors" data-nav>Gallery</a>
+                    <a href="#contact" class="nav-link text-sm font-medium text-aluminum/80 hover:text-cyan-clean transition-colors" data-nav>Contact</a>
+                </nav>
+
+                <!-- CTA + Mobile Toggle -->
+                <div class="flex items-center gap-4">
+                    <a href="tel:+971569586168" class="hidden md:flex items-center gap-2 px-5 py-2.5 bg-cyan-clean/10 border border-cyan-clean/30 rounded-full text-cyan-clean text-sm font-medium hover:bg-cyan-clean/20 transition-all">
+                        <i class="fas fa-phone text-xs"></i>
+                        <span>056 958 6168</span>
+                    </a>
+                    <button id="mobile-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center text-aluminum">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 z-40 bg-deep-space/98 backdrop-blur-xl lg:hidden">
+        <div class="flex flex-col items-center justify-center h-full gap-8">
+            <a href="#home" class="text-2xl font-serif text-aluminum hover:text-cyan-clean transition-colors" data-nav>Home</a>
+            <a href="#about" class="text-2xl font-serif text-aluminum hover:text-cyan-clean transition-colors" data-nav>About</a>
+            <a href="#services" class="text-2xl font-serif text-aluminum hover:text-cyan-clean transition-colors" data-nav>Services</a>
+            <a href="#gallery" class="text-2xl font-serif text-aluminum hover:text-cyan-clean transition-colors" data-nav>Gallery</a>
+            <a href="#contact" class="text-2xl font-serif text-aluminum hover:text-cyan-clean transition-colors" data-nav>Contact</a>
+            <div class="mt-8 flex flex-col items-center gap-4">
+                <a href="tel:+971569586168" class="flex items-center gap-2 text-cyan-clean">
+                    <i class="fas fa-phone"></i>
+                    <span>056 958 6168</span>
+                </a>
+                <a href="https://wa.me/971558786055" target="_blank" class="flex items-center gap-2 text-green-400">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp Us</span>
+                </a>
+            </div>
+        </div>
+        <button id="mobile-close" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-aluminum">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main id="main-content">
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- PAGE 1: HOME (HERO) -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section id="page-home" class="page-section active">
+            <!-- Hero Section -->
+            <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
+                <!-- Background Image -->
+                <div class="absolute inset-0">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" 
+                         alt="Luxury Villa Ras Al Khaimah" 
+                         class="w-full h-full object-cover scale-110 hero-bg-img">
+                    <div class="absolute inset-0 bg-gradient-to-b from-deep-space/70 via-deep-space/50 to-deep-space"></div>
+                </div>
+
+                <!-- Particles Canvas -->
+                <canvas id="particles-canvas"></canvas>
+
+                <!-- Hero Content -->
+                <div class="relative z-10 text-center px-6 max-w-5xl mx-auto pt-20">
+                    <div class="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-clean/10 border border-cyan-clean/20 mb-8">
+                        <span class="w-2 h-2 rounded-full bg-cyan-clean animate-pulse"></span>
+                        <span class="text-cyan-clean text-sm font-medium tracking-wide">Premium Cleaning Since 2008</span>
+                    </div>
+
+                    <h1 class="hero-title text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-aluminum leading-tight mb-6">
+                        Crystal Clean<br>
+                        <span class="gradient-text">Living Spaces</span>
+                    </h1>
+
+                    <p class="hero-subtitle text-lg md:text-xl text-aluminum/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+                        Professional cleaning services in Ras Al Khaimah. From luxury villas to commercial complexes, 
+                        we deliver precision cleanliness that transforms your environment.
+                    </p>
+
+                    <div class="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#services" class="px-8 py-4 bg-cyan-clean text-deep-space font-semibold rounded-full hover:bg-cyan-glow transition-all hover:shadow-lg hover:shadow-cyan-clean/30 flex items-center gap-2" data-nav>
+                            <span>Explore Services</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://wa.me/971558786055?text=Hello%20Abdul%20Aziz%20Habib%20Cleaning%20Service,%20I%20would%20like%20to%20inquire%20about%20your%20cleaning%20services%20in%20Ras%20Al%20Khaimah." 
+                           target="_blank"
+                           class="px-8 py-4 border border-aluminum/30 text-aluminum font-semibold rounded-full hover:border-cyan-clean hover:text-cyan-clean transition-all flex items-center gap-2">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Get a Free Quote</span>
+                        </a>
+                    </div>
+
+                    <!-- Stats Row -->
+                    <div class="hero-stats mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+                        <div class="text-center">
+                            <div class="stat-number text-3xl md:text-4xl font-bold text-cyan-clean" data-count="15">0</div>
+                            <div class="text-sm text-aluminum/60 mt-1">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number text-3xl md:text-4xl font-bold text-cyan-clean" data-count="5000">0</div>
+                            <div class="text-sm text-aluminum/60 mt-1">Projects Done</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number text-3xl md:text-4xl font-bold text-cyan-clean" data-count="50">0</div>
+                            <div class="text-sm text-aluminum/60 mt-1">Expert Staff</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number text-3xl md:text-4xl font-bold text-cyan-clean" data-count="99">0</div>
+                            <div class="text-sm text-aluminum/60 mt-1">% Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+                    <span class="text-xs text-aluminum/40 tracking-widest uppercase">Scroll</span>
+                    <div class="w-6 h-10 rounded-full border-2 border-aluminum/30 flex items-start justify-center p-2">
+                        <div class="w-1.5 h-3 rounded-full bg-cyan-clean animate-bounce"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Services Preview -->
+            <div class="py-24 px-6">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-16">
+                        <div class="line-deco mx-auto mb-6"></div>
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold text-aluminum mb-4">Our Signature Services</h2>
+                        <p class="text-aluminum/60 max-w-xl mx-auto">Comprehensive cleaning solutions tailored for Ras Al Khaimah's finest properties</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <a href="#service-villas" class="service-card group rounded-2xl h-80 block" data-nav>
+                            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80" alt="Villa Cleaning" class="service-img absolute inset-0 w-full h-full object-cover">
+                            <div class="img-overlay absolute inset-0 z-[2]"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-[3]">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-clean/20 flex items-center justify-center mb-4 group-hover:bg-cyan-clean/30 transition-colors">
+                                    <i class="fas fa-home text-cyan-clean text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-aluminum mb-2">Villa Cleaning</h3>
+                                <p class="text-aluminum/60 text-sm">Complete villa deep cleaning for Mina Al Arab and Al Hamra properties</p>
+                            </div>
+                        </a>
+
+                        <a href="#service-sofa" class="service-card group rounded-2xl h-80 block" data-nav>
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Sofa Cleaning" class="service-img absolute inset-0 w-full h-full object-cover">
+                            <div class="img-overlay absolute inset-0 z-[2]"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-[3]">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-clean/20 flex items-center justify-center mb-4 group-hover:bg-cyan-clean/30 transition-colors">
+                                    <i class="fas fa-couch text-cyan-clean text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-aluminum mb-2">Sofa Cleaning</h3>
+                                <p class="text-aluminum/60 text-sm">Steam extraction and fabric restoration for all upholstery types</p>
+                            </div>
+                        </a>
+
+                        <a href="#service-glass" class="service-card group rounded-2xl h-80 block" data-nav>
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Glass Cleaning" class="service-img absolute inset-0 w-full h-full object-cover">
+                            <div class="img-overlay absolute inset-0 z-[2]"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-[3]">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-clean/20 flex items-center justify-center mb-4 group-hover:bg-cyan-clean/30 transition-colors">
+                                    <i class="fas fa-gem text-cyan-clean text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-aluminum mb-2">Glass Cleaning</h3>
+                                <p class="text-aluminum/60 text-sm">Streak-free facade and window cleaning for commercial towers</p>
+                            </div>
+                        </a>
+
+                        <a href="#service-floors" class="service-card group rounded-2xl h-80 block" data-nav>
+                            <img src="https://images.unsplash.com/photo-1581858726768-7589d36ad853?w=800&q=80" alt="Floor Cleaning" class="service-img absolute inset-0 w-full h-full object-cover">
+                            <div class="img-overlay absolute inset-0 z-[2]"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-[3]">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-clean/20 flex items-center justify-center mb-4 group-hover:bg-cyan-clean/30 transition-colors">
+                                    <i class="fas fa-layer-group text-cyan-clean text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-aluminum mb-2">Floor Cleaning</h3>
+                                <p class="text-aluminum/60 text-sm">Marble polishing, parquet restoration, and tile deep cleaning</p>
+                            </div>
+                        </a>
+
+                        <a href="#service-buildings" class="service-card group rounded-2xl h-80 block" data-nav>
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" alt="Building Cleaning" class="service-img absolute inset-0 w-full h-full object-cover">
+                            <div class="img-overlay absolute inset-0 z-[2]"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-[3]">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-clean/20 flex items-center justify-center mb-4 group-hover:bg-cyan-clean/30 transition-colors">
+                                    <i class="fas fa-building text-cyan-clean text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-aluminum mb-2">Building Cleaning</h3>
+                                <p class="text-aluminum/60 text-sm">Full-scale commercial and residential building maintenance</p>
+                            </div>
+                        </a>
+
+                        <a href="#service-carpet" class="service-card group rounded-2xl h-80 block" data-nav>
+                            <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800&q=80" alt="Carpet Cleaning" class="service-img absolute inset-0 w-full h-full object-cover">
+                            <div class="img-overlay absolute inset-0 z-[2]"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 z-[3]">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-clean/20 flex items-center justify-center mb-4 group-hover:bg-cyan-clean/30 transition-colors">
+                                    <i class="fas fa-rug text-cyan-clean text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-aluminum mb-2">Carpet Cleaning</h3>
+                                <p class="text-aluminum/60 text-sm">Deep extraction cleaning for Persian, oriental, and modern carpets</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <a href="#services" class="inline-flex items-center gap-2 text-cyan-clean hover:text-cyan-glow transition-colors font-medium" data-nav>
+                            <span>View All Services</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="py-24 px-6 bg-deep-space-light/30">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <div class="line-deco mb-6"></div>
+                            <h2 class="text-3xl md:text-5xl font-serif font-bold text-aluminum mb-6">Why Ras Al Khaimah<br>Trusts Us</h2>
+                            <p class="text-aluminum/60 mb-10 leading-relaxed">
+                                For over 15 years, Abdul Aziz Habib Cleaning Service has been the trusted partner 
+                                for premium properties across Ras Al Khaimah. Our commitment to excellence and 
+                                attention to microscopic detail sets us apart.
+                            </p>
+
+                            <div class="space-y-6">
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-shield-alt text-cyan-clean"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-aluminum mb-1">Insured & Certified</h4>
+                                        <p class="text-aluminum/50 text-sm">Fully insured team with international cleaning certifications</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-leaf text-cyan-clean"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-aluminum mb-1">Eco-Friendly Products</h4>
+                                        <p class="text-aluminum/50 text-sm">Non-toxic, biodegradable cleaning solutions safe for families</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-clock text-cyan-clean"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-aluminum mb-1">24/7 Availability</h4>
+                                        <p class="text-aluminum/50 text-sm">Round-the-clock service for emergencies and scheduled maintenance</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-award text-cyan-clean"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-aluminum mb-1">Satisfaction Guarantee</h4>
+                                        <p class="text-aluminum/50 text-sm">100% satisfaction guarantee with free re-cleaning if needed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" 
+                                     alt="Professional Cleaning Team" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="absolute -bottom-6 -left-6 bg-deep-space border border-cyan-clean/20 rounded-2xl p-6 max-w-xs">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="flex -space-x-2">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" class="w-8 h-8 rounded-full border-2 border-deep-space object-cover">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" class="w-8 h-8 rounded-full border-2 border-deep-space object-cover">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" class="w-8 h-8 rounded-full border-2 border-deep-space object-cover">
+                                    </div>
+                                    <span class="text-sm text-aluminum/60">+47 more</span>
+                                </div>
+                                <p class="text-aluminum text-sm">"The most thorough cleaning service we've ever used in RAK."</p>
+                                <div class="flex gap-1 mt-2">
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                    <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- PAGE 2: ABOUT -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section id="page-about" class="page-section">
+            <!-- Hero Banner -->
+            <div class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" 
+                     alt="About Abdul Aziz Habib" 
+                     class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Our Story</span>
+                    </h1>
+                    <p class="text-aluminum/60 text-lg max-w-2xl mx-auto">A legacy of precision, trust, and immaculate spaces</p>
+                </div>
+            </div>
+
+            <!-- Story Section -->
+            <div class="py-24 px-6">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        <div class="order-2 lg:order-1">
+                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-aluminum mb-6">From Humble Beginnings<br>to Industry Leaders</h2>
+                            <div class="space-y-4 text-aluminum/70 leading-relaxed">
+                                <p>Founded in 2008 by Abdul Aziz Habib, our journey began with a single mission: to bring world-class cleaning standards to Ras Al Khaimah. What started as a small team of dedicated professionals has grown into one of the emirate's most trusted cleaning enterprises.</p>
+                                <p>Over the past 15 years, we have served thousands of satisfied clients across Mina Al Arab, Al Hamra Village, Al Marjan Island, and beyond. Our portfolio spans luxury villas, commercial towers, retail spaces, and exhibition centers.</p>
+                                <p>We believe that cleanliness is not just about appearance — it's about creating healthy, vibrant environments where people thrive. Every surface we touch, every corner we clean, reflects our unwavering commitment to excellence.</p>
+                            </div>
+
+                            <div class="mt-10 flex gap-8">
+                                <div>
+                                    <div class="text-4xl font-bold text-cyan-clean">15+</div>
+                                    <div class="text-sm text-aluminum/50 mt-1">Years of Excellence</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-bold text-cyan-clean">50+</div>
+                                    <div class="text-sm text-aluminum/50 mt-1">Expert Staff</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-bold text-cyan-clean">5K+</div>
+                                    <div class="text-sm text-aluminum/50 mt-1">Projects Completed</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-1 lg:order-2 relative">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="space-y-4 mt-8">
+                                    <div class="aspect-[3/4] rounded-2xl overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80" alt="Cleaning Team" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="aspect-square rounded-2xl overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=600&q=80" alt="Equipment" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="aspect-square rounded-2xl overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80" alt="Villa Cleaning" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="aspect-[3/4] rounded-2xl overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=80" alt="Office Cleaning" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="py-24 px-6 bg-deep-space-light/30">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-16">
+                        <div class="line-deco mx-auto mb-6"></div>
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold text-aluminum mb-4">Our Core Values</h2>
+                        <p class="text-aluminum/60 max-w-xl mx-auto">The principles that guide every cleaning operation we undertake</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="p-8 rounded-2xl bg-deep-space border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all group">
+                            <div class="w-14 h-14 rounded-xl bg-cyan-clean/10 flex items-center justify-center mb-6 group-hover:bg-cyan-clean/20 transition-colors">
+                                <i class="fas fa-gem text-cyan-clean text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-aluminum mb-3">Precision</h3>
+                            <p class="text-aluminum/60 text-sm leading-relaxed">Every detail matters. We clean with surgical precision, ensuring no spot is missed.</p>
+                        </div>
+
+                        <div class="p-8 rounded-2xl bg-deep-space border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all group">
+                            <div class="w-14 h-14 rounded-xl bg-cyan-clean/10 flex items-center justify-center mb-6 group-hover:bg-cyan-clean/20 transition-colors">
+                                <i class="fas fa-handshake text-cyan-clean text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-aluminum mb-3">Integrity</h3>
+                            <p class="text-aluminum/60 text-sm leading-relaxed">Honest pricing, transparent processes, and respect for your property and privacy.</p>
+                        </div>
+
+                        <div class="p-8 rounded-2xl bg-deep-space border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all group">
+                            <div class="w-14 h-14 rounded-xl bg-cyan-clean/10 flex items-center justify-center mb-6 group-hover:bg-cyan-clean/20 transition-colors">
+                                <i class="fas fa-rocket text-cyan-clean text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-aluminum mb-3">Innovation</h3>
+                            <p class="text-aluminum/60 text-sm leading-relaxed">We invest in the latest cleaning technology and eco-friendly solutions.</p>
+                        </div>
+
+                        <div class="p-8 rounded-2xl bg-deep-space border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all group">
+                            <div class="w-14 h-14 rounded-xl bg-cyan-clean/10 flex items-center justify-center mb-6 group-hover:bg-cyan-clean/20 transition-colors">
+                                <i class="fas fa-heart text-cyan-clean text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-aluminum mb-3">Care</h3>
+                            <p class="text-aluminum/60 text-sm leading-relaxed">We treat every space as if it were our own, with genuine care and dedication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="py-24 px-6">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-16">
+                        <div class="line-deco mx-auto mb-6"></div>
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold text-aluminum mb-4">Our Process</h2>
+                        <p class="text-aluminum/60 max-w-xl mx-auto">A systematic approach to delivering consistent, exceptional results</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                        <div class="relative text-center">
+                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-clean to-cyan-dim flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-deep-space">01</div>
+                            <h3 class="text-xl font-bold text-aluminum mb-3">Inspection</h3>
+                            <p class="text-aluminum/60 text-sm">Thorough assessment of your space to identify specific cleaning needs and challenges.</p>
+                            <div class="step-connector hidden lg:block"></div>
+                        </div>
+
+                        <div class="relative text-center">
+                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-clean to-cyan-dim flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-deep-space">02</div>
+                            <h3 class="text-xl font-bold text-aluminum mb-3">Planning</h3>
+                            <p class="text-aluminum/60 text-sm">Customized cleaning plan with the right equipment, products, and team allocation.</p>
+                            <div class="step-connector hidden lg:block"></div>
+                        </div>
+
+                        <div class="relative text-center">
+                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-clean to-cyan-dim flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-deep-space">03</div>
+                            <h3 class="text-xl font-bold text-aluminum mb-3">Execution</h3>
+                            <p class="text-aluminum/60 text-sm">Meticulous cleaning performed by trained professionals using advanced techniques.</p>
+                            <div class="step-connector hidden lg:block"></div>
+                        </div>
+
+                        <div class="relative text-center">
+                            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-clean to-cyan-dim flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-deep-space">04</div>
+                            <h3 class="text-xl font-bold text-aluminum mb-3">Verification</h3>
+                            <p class="text-aluminum/60 text-sm">Quality check and client walkthrough to ensure complete satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- PAGE 3: SERVICES HUB -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section id="page-services" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80" 
+                     alt="Services Hub" 
+                     class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Complete Service Hub</span>
+                    </h1>
+                    <p class="text-aluminum/60 text-lg max-w-2xl mx-auto">Comprehensive cleaning solutions for every space and surface</p>
+                </div>
+            </div>
+
+            <div class="py-24 px-6">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Residential Services -->
+                    <div class="mb-20">
+                        <div class="flex items-center gap-4 mb-10">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center">
+                                <i class="fas fa-home text-cyan-clean text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-aluminum">Residential Services</h2>
+                                <p class="text-aluminum/50 text-sm">For homes, villas, and apartments</p>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <a href="#service-villas" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-home text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Villa Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Complete deep cleaning for luxury villas in Mina Al Arab, Al Hamra & more.</p>
+                            </a>
+
+                            <a href="#service-sofa" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-couch text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Sofa Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Steam extraction and fabric restoration for all upholstery types.</p>
+                            </a>
+
+                            <a href="#service-carpet" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-rug text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Carpet Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Deep extraction for Persian, oriental, and modern carpets.</p>
+                            </a>
+
+                            <a href="#service-furniture" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-chair text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Furniture Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Wood, leather, and fabric furniture restoration and maintenance.</p>
+                            </a>
+
+                            <a href="#service-floors" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-layer-group text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Floor Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Marble polishing, parquet restoration, and tile deep cleaning.</p>
+                            </a>
+
+                            <a href="#service-walls" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-square text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Wall Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Interior and exterior wall washing, paint prep, and stain removal.</p>
+                            </a>
+
+                            <a href="#service-windows" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-window-maximize text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Window Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Streak-free interior and exterior window cleaning services.</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Commercial Services -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-10">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center">
+                                <i class="fas fa-building text-cyan-clean text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-aluminum">Commercial Services</h2>
+                                <p class="text-aluminum/50 text-sm">For businesses, retail, and industrial spaces</p>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <a href="#service-buildings" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-city text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Building Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Full-scale commercial and residential building maintenance.</p>
+                            </a>
+
+                            <a href="#service-glass" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-gem text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Glass Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Facade and structural glass cleaning for towers and complexes.</p>
+                            </a>
+
+                            <a href="#service-shops" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-store text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Shop Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Retail space cleaning for boutiques, malls, and showrooms.</p>
+                            </a>
+
+                            <a href="#service-exhibitions" class="group p-6 rounded-2xl bg-deep-space-light/50 border border-cyan-clean/10 hover:border-cyan-clean/30 transition-all" data-nav>
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center group-hover:bg-cyan-clean/20 transition-colors">
+                                        <i class="fas fa-museum text-cyan-clean"></i>
+                                    </div>
+                                    <i class="fas fa-arrow-right text-aluminum/30 group-hover:text-cyan-clean transition-colors"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-aluminum mb-2">Exhibition Cleaning</h3>
+                                <p class="text-aluminum/50 text-sm">Pre and post-event cleaning for exhibitions and conferences.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- PAGE 4-13: INDIVIDUAL SERVICE PAGES -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- SERVICE: VILLAS -->
+        <section id="page-service-villas" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80" alt="Villa Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Villa Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Luxury Villa Deep Cleaning</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">Our villa cleaning service is designed for the prestigious properties of Mina Al Arab, Al Hamra Village, and Al Marjan Island. We understand that your villa is more than a home — it's a statement of elegance.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Complete interior deep cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Marble and stone floor polishing</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Kitchen and bathroom sanitization</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Pool area and outdoor space cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Post-construction cleanup available</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Villa Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: SOFA -->
+        <section id="page-service-sofa" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1920&q=80" alt="Sofa Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Sofa Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Professional Sofa & Upholstery Cleaning</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">Restore the beauty and comfort of your sofas with our advanced steam extraction and dry cleaning techniques. We handle all fabric types including leather, velvet, linen, and synthetic blends.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Hot water extraction cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Stain and odor removal</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Fabric protection treatment</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Leather conditioning and restoration</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Allergen and dust mite elimination</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Sofa Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: CARPET -->
+        <section id="page-service-carpet" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=1920&q=80" alt="Carpet Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Carpet Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Expert Carpet & Rug Cleaning</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">From delicate Persian rugs to modern wall-to-wall carpeting, our specialized cleaning processes preserve colors, textures, and fibers while removing deep-seated dirt, stains, and allergens.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Persian & Oriental rug cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Deep steam extraction</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Color restoration</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Fringe cleaning and repair</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Anti-microbial treatment</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800&q=80" alt="Carpet Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: FURNITURE -->
+        <section id="page-service-furniture" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1920&q=80" alt="Furniture Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Furniture Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Complete Furniture Restoration</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">We clean and restore all types of furniture including wooden pieces, leather sofas, fabric chairs, and antique collections. Our gentle yet effective methods protect your investment.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Wood polishing and conditioning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Leather cleaning and moisturizing</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Fabric deep cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Antique furniture care</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Scratch and mark removal</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Furniture Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: FLOORS -->
+        <section id="page-service-floors" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581858726768-7589d36ad853?w=1920&q=80" alt="Floor Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Floor Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Floor Polishing & Restoration</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">From marble halls to parquet bedrooms, we restore the natural beauty of your floors. Our diamond polishing and crystallization techniques bring back the mirror-like finish your floors deserve.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Marble polishing & crystallization</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Parquet wood restoration</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Tile & grout deep cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Granite and travertine care</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Epoxy floor maintenance</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581858726768-7589d36ad853?w=800&q=80" alt="Floor Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: WALLS -->
+        <section id="page-service-walls" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&q=80" alt="Wall Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Wall Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Interior & Exterior Wall Washing</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">Walls accumulate dust, grease, and stains over time. Our wall cleaning service removes all traces of dirt while protecting paint and wallpaper, leaving your walls looking freshly painted.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Painted wall washing</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Wallpaper cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Exterior facade washing</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Stain and mark removal</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Mold and mildew treatment</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="Wall Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: WINDOWS -->
+        <section id="page-service-windows" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80" alt="Window Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Window Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Crystal Clear Window Cleaning</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">Streak-free window cleaning for homes and commercial buildings. We use purified water technology and professional squeegees to ensure perfect clarity every time.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Interior & exterior windows</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> High-rise window cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Frame and track cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Screen washing</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Skylight cleaning</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Window Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: BUILDINGS -->
+        <section id="page-service-buildings" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80" alt="Building Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Building Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Commercial Building Maintenance</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">Comprehensive cleaning and maintenance services for commercial and residential buildings. From lobbies to rooftops, we keep your property pristine and professional.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Common area cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Parking garage cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Elevator and stairwell maintenance</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Roof and gutter cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Waste management</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80" alt="Building Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: GLASS -->
+        <section id="page-service-glass" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80" alt="Glass Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Glass Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Facade & Structural Glass Cleaning</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">Specialized glass cleaning for high-rise buildings, shopping malls, and commercial facades. Our rope access and boom lift teams safely clean even the most challenging glass structures.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> High-rise facade cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Rope access specialists</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Glass curtain wall cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Atrium and skylight cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Water-fed pole systems</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Glass Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: SHOPS -->
+        <section id="page-service-shops" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80" alt="Shop Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Shop Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Retail & Shop Cleaning</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">First impressions matter in retail. Our shop cleaning service ensures your store always looks inviting and professional, from polished floors to spotless display cases.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Floor polishing and maintenance</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Display case cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Fitting room sanitization</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Window and mirror cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> After-hours cleaning available</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Shop Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE: EXHIBITIONS -->
+        <section id="page-service-exhibitions" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920&q=80" alt="Exhibition Cleaning" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Exhibition Cleaning</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="py-24 px-6 max-w-5xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Event & Exhibition Cleaning</h2>
+                        <p class="text-aluminum/70 mb-6 leading-relaxed">Pre-event preparation and post-event cleanup for exhibitions, conferences, and trade shows. We ensure your venue is immaculate before guests arrive and restored to perfection after.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Pre-event deep cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Post-event restoration</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Booth and stand cleaning</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Carpet and floor protection</li>
+                            <li class="flex items-center gap-3 text-aluminum/70"><i class="fas fa-check text-cyan-clean"></i> Rapid turnaround service</li>
+                        </ul>
+                    </div>
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" alt="Exhibition Cleaning" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- PAGE 14: PROJECT GALLERY (BENTO GRID) -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section id="page-gallery" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" alt="Project Gallery" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Project Gallery</span>
+                    </h1>
+                    <p class="text-aluminum/60 text-lg max-w-2xl mx-auto">A showcase of our finest transformations across Ras Al Khaimah</p>
+                </div>
+            </div>
+
+            <div class="py-24 px-6">
+                <div class="max-w-7xl mx-auto">
+                    <div class="bento-grid">
+                        <div class="bento-item large group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Villa Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deep-space/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <span class="text-cyan-clean text-xs font-medium tracking-widest uppercase mb-2 block">Villa</span>
+                                <h3 class="text-xl font-bold text-aluminum">Mina Al Arab Luxury Villa</h3>
+                                <p class="text-aluminum/60 text-sm mt-1">Complete deep cleaning & marble polishing</p>
+                            </div>
+                        </div>
+
+                        <div class="bento-item group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Sofa Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deep-space/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-cyan-clean text-xs font-medium tracking-widest uppercase mb-1 block">Sofa</span>
+                                <h3 class="text-lg font-bold text-aluminum">Premium Upholstery</h3>
+                            </div>
+                        </div>
+
+                        <div class="bento-item group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" alt="Glass Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deep-space/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-cyan-clean text-xs font-medium tracking-widest uppercase mb-1 block">Glass</span>
+                                <h3 class="text-lg font-bold text-aluminum">Tower Facade</h3>
+                            </div>
+                        </div>
+
+                        <div class="bento-item wide group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1581858726768-7589d36ad853?w=800&q=80" alt="Floor Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deep-space/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <span class="text-cyan-clean text-xs font-medium tracking-widest uppercase mb-2 block">Floors</span>
+                                <h3 class="text-xl font-bold text-aluminum">Marble Hall Restoration</h3>
+                                <p class="text-aluminum/60 text-sm mt-1">Diamond polishing & crystallization</p>
+                            </div>
+                        </div>
+
+                        <div class="bento-item group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=600&q=80" alt="Carpet Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deep-space/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-cyan-clean text-xs font-medium tracking-widest uppercase mb-1 block">Carpet</span>
+                                <h3 class="text-lg font-bold text-aluminum">Persian Rug</h3>
+                            </div>
+                        </div>
+
+                        <div class="bento-item group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="Building Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deep-space/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-cyan-clean text-xs font-medium tracking-widest uppercase mb-1 block">Building</span>
+                                <h3 class="text-lg font-bold text-aluminum">Commercial Tower</h3>
+                            </div>
+                        </div>
+
+                        <div class="bento-item tall group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Shop Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deep-space/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-cyan-clean text-xs font-medium tracking-widest uppercase mb-1 block">Retail</span>
+                                <h3 class="text-lg font-bold text-aluminum">Boutique Store</h3>
+                                <p class="text-aluminum/60 text-sm mt-1">RAK Mall</p>
+                            </div>
+                        </div>
+
+                        <div class="bento-item group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80" alt="Exhibition Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deep-space/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4">
+                                <span class="text-cyan-clean text-xs font-medium tracking-widest uppercase mb-1 block">Event</span>
+                                <h3 class="text-lg font-bold text-aluminum">Exhibition Center</h3>
+                            </div>
+                        </div>
+
+                        <div class="bento-item wide group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Villa Project 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deep-space/90 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <span class="text-cyan-clean text-xs font-medium tracking-widest uppercase mb-2 block">Villa</span>
+                                <h3 class="text-xl font-bold text-aluminum">Al Hamra Village Estate</h3>
+                                <p class="text-aluminum/60 text-sm mt-1">Post-construction deep cleaning</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- PAGE 15: CONTACT US -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <section id="page-contact" class="page-section">
+            <div class="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80" alt="Contact Us" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-deep-space/80 via-deep-space/60 to-deep-space"></div>
+                <div class="relative z-10 text-center px-6">
+                    <div class="line-deco mx-auto mb-6"></div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-aluminum mb-4">
+                        Cleaning Services in Ras Al Khaimah<br>
+                        <span class="gradient-text">Get In Touch</span>
+                    </h1>
+                    <p class="text-aluminum/60 text-lg max-w-2xl mx-auto">Ready to transform your space? Contact us for a free consultation and quote.</p>
+                </div>
+            </div>
+
+            <div class="py-24 px-6">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-16">
+                        <!-- Contact Info -->
+                        <div>
+                            <h2 class="text-3xl font-serif font-bold text-aluminum mb-6">Let's Start a Conversation</h2>
+                            <p class="text-aluminum/60 mb-10 leading-relaxed">Whether you need a one-time deep clean or ongoing maintenance, we're here to help. Reach out and our team will respond within 2 hours.</p>
+
+                            <div class="space-y-6 mb-10">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone text-cyan-clean"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-aluminum mb-1">Phone</h4>
+                                        <a href="tel:+971569586168" class="text-aluminum/60 hover:text-cyan-clean transition-colors">056 958 6168</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fab fa-whatsapp text-cyan-clean"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-aluminum mb-1">WhatsApp</h4>
+                                        <a href="https://wa.me/971558786055" target="_blank" class="text-aluminum/60 hover:text-cyan-clean transition-colors">+971 55 878 6055</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-cyan-clean"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-aluminum mb-1">Email</h4>
+                                        <a href="mailto:abdulaziz21031987@gmail.com" class="block text-aluminum/60 hover:text-cyan-clean transition-colors break-all">abdulaziz21031987@gmail.com</a>
+                                        <a href="mailto:info@abdulazizcleaning.com" class="block text-aluminum/40 hover:text-cyan-clean transition-colors break-all text-sm mt-0.5">info@abdulazizcleaning.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-cyan-clean"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-aluminum mb-1">Location</h4>
+                                        <p class="text-aluminum/60">Ras Al Khaimah &middot; Dubai, United Arab Emirates</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-clock text-cyan-clean"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-aluminum mb-1">Working Hours</h4>
+                                        <p class="text-aluminum/60">Sunday - Saturday: 8:00 AM - 10:00 PM<br>Emergency Service: 24/7</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Links -->
+                            <div>
+                                <h4 class="font-semibold text-aluminum mb-4">Follow Us</h4>
+                                <div class="flex gap-3">
+                                    <a href="#" class="w-10 h-10 rounded-full bg-cyan-clean/10 flex items-center justify-center text-cyan-clean hover:bg-cyan-clean hover:text-deep-space transition-all">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-cyan-clean/10 flex items-center justify-center text-cyan-clean hover:bg-cyan-clean hover:text-deep-space transition-all">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-cyan-clean/10 flex items-center justify-center text-cyan-clean hover:bg-cyan-clean hover:text-deep-space transition-all">
+                                        <i class="fab fa-tiktok"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-cyan-clean/10 flex items-center justify-center text-cyan-clean hover:bg-cyan-clean hover:text-deep-space transition-all">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="p-8 rounded-2xl bg-deep-space-light/30 border border-cyan-clean/10">
+                            <h3 class="text-2xl font-bold text-aluminum mb-6">Request a Free Quote</h3>
+                            <form id="contact-form" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-aluminum/70 mb-2">Full Name</label>
+                                        <input type="text" class="form-input w-full px-4 py-3 rounded-xl text-aluminum" placeholder="Your name" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-aluminum/70 mb-2">Phone</label>
+                                        <input type="tel" class="form-input w-full px-4 py-3 rounded-xl text-aluminum" placeholder="+971 XX XXX XXXX" required>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-aluminum/70 mb-2">Email</label>
+                                    <input type="email" class="form-input w-full px-4 py-3 rounded-xl text-aluminum" placeholder="your@email.com" required>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-aluminum/70 mb-2">Service Required</label>
+                                    <select class="form-input w-full px-4 py-3 rounded-xl text-aluminum" required>
+                                        <option value="">Select a service</option>
+                                        <option value="villa">Villa Cleaning</option>
+                                        <option value="sofa">Sofa Cleaning</option>
+                                        <option value="carpet">Carpet Cleaning</option>
+                                        <option value="furniture">Furniture Cleaning</option>
+                                        <option value="floors">Floor Cleaning</option>
+                                        <option value="walls">Wall Cleaning</option>
+                                        <option value="windows">Window Cleaning</option>
+                                        <option value="buildings">Building Cleaning</option>
+                                        <option value="glass">Glass Cleaning</option>
+                                        <option value="shops">Shop Cleaning</option>
+                                        <option value="exhibitions">Exhibition Cleaning</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-aluminum/70 mb-2">Message</label>
+                                    <textarea class="form-input w-full px-4 py-3 rounded-xl text-aluminum h-32 resize-none" placeholder="Tell us about your cleaning needs..."></textarea>
+                                </div>
+
+                                <button type="submit" id="submit-btn" class="btn-morph w-full py-4 bg-cyan-clean text-deep-space font-bold rounded-full hover:bg-cyan-glow transition-all flex items-center justify-center gap-2">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-icon"><i class="fas fa-sparkles text-xl sparkle-anim"></i></span>
+                                    <span class="btn-success"><i class="fas fa-check text-xl"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="h-96 w-full">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115681.14218400589!2d55.8970488!3d25.8006924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef6710e4cd209a7%3A0x4030c2c7c1e41a0!2sRas%20Al%20Khaimah!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== DYNAMIC SERVICE FOOTER ==================== -->
+    <footer id="dynamic-footer" class="border-t border-cyan-clean/10 bg-deep-space-light/30">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo-icon.png" alt="Abdul Aziz Habib Cleaning Service logo" class="h-11 w-auto">
+                        <div>
+                            <div class="text-lg font-bold text-aluminum leading-tight">Abdul Aziz Habib</div>
+                            <div class="text-xs text-cyan-clean tracking-widest uppercase">Cleaning Service</div>
+                        </div>
+                    </div>
+                    <p class="text-aluminum/50 text-sm leading-relaxed mb-6">Premium cleaning services in Ras Al Khaimah and Dubai — transforming villas, buildings and interiors with precision and care.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-full bg-cyan-clean/10 flex items-center justify-center text-cyan-clean hover:bg-cyan-clean hover:text-deep-space transition-all text-sm">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-cyan-clean/10 flex items-center justify-center text-cyan-clean hover:bg-cyan-clean hover:text-deep-space transition-all text-sm">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/971558786055" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-cyan-clean/10 flex items-center justify-center text-cyan-clean hover:bg-cyan-clean hover:text-deep-space transition-all text-sm">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-aluminum mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>Home</a></li>
+                        <li><a href="#about" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>About Us</a></li>
+                        <li><a href="#services" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>Services</a></li>
+                        <li><a href="#gallery" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>Gallery</a></li>
+                        <li><a href="#contact" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold text-aluminum mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#service-villas" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>Villa Cleaning</a></li>
+                        <li><a href="#service-sofa" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>Sofa Cleaning</a></li>
+                        <li><a href="#service-carpet" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>Carpet Cleaning</a></li>
+                        <li><a href="#service-floors" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>Floor Cleaning</a></li>
+                        <li><a href="#service-glass" class="text-aluminum/50 hover:text-cyan-clean transition-colors text-sm" data-nav>Glass Cleaning</a></li>
+                    </ul>
+                </div>
+
+                <!-- Next Service Suggestion -->
+                <div id="footer-suggestion">
+                    <h4 class="font-semibold text-aluminum mb-6">You May Also Like</h4>
+                    <div id="suggestion-cards" class="space-y-3">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-cyan-clean/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-aluminum/40 text-sm">&copy; 2026 Abdul Aziz Habib Cleaning Service. All rights reserved. &middot; powered by <a href="mailto:hello@quartermasters.me" class="hover:text-cyan-clean transition-colors">Quartermasters F.Z.C</a></p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-aluminum/40 hover:text-cyan-clean transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-aluminum/40 hover:text-cyan-clean transition-colors text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== WHATSAPP FLOATING BUTTON ==================== -->
+    <a href="https://wa.me/971558786055" target="_blank" id="whatsapp-btn" class="whatsapp-float">
+        <i class="fab fa-whatsapp text-white text-2xl"></i>
+    </a>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // ==================== LENIS SMOOTH SCROLL ====================
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Connect Lenis to GSAP ScrollTrigger
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+
+        // ==================== ROUTER SYSTEM ====================
+        const routes = {
+            'home': 'page-home',
+            'about': 'page-about',
+            'services': 'page-services',
+            'service-villas': 'page-service-villas',
+            'service-sofa': 'page-service-sofa',
+            'service-carpet': 'page-service-carpet',
+            'service-furniture': 'page-service-furniture',
+            'service-floors': 'page-service-floors',
+            'service-walls': 'page-service-walls',
+            'service-windows': 'page-service-windows',
+            'service-buildings': 'page-service-buildings',
+            'service-glass': 'page-service-glass',
+            'service-shops': 'page-service-shops',
+            'service-exhibitions': 'page-service-exhibitions',
+            'gallery': 'page-gallery',
+            'contact': 'page-contact',
+        };
+
+        const serviceOrder = [
+            'service-villas', 'service-sofa', 'service-carpet', 'service-furniture',
+            'service-floors', 'service-walls', 'service-windows', 'service-buildings',
+            'service-glass', 'service-shops', 'service-exhibitions'
+        ];
+
+        const serviceNames = {
+            'service-villas': 'Villa Cleaning',
+            'service-sofa': 'Sofa Cleaning',
+            'service-carpet': 'Carpet Cleaning',
+            'service-furniture': 'Furniture Cleaning',
+            'service-floors': 'Floor Cleaning',
+            'service-walls': 'Wall Cleaning',
+            'service-windows': 'Window Cleaning',
+            'service-buildings': 'Building Cleaning',
+            'service-glass': 'Glass Cleaning',
+            'service-shops': 'Shop Cleaning',
+            'service-exhibitions': 'Exhibition Cleaning',
+        };
+
+        let currentPage = 'home';
+
+        function navigateTo(pageId, pushState = true) {
+            if (!routes[pageId]) pageId = 'home';
+
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show target page
+            const targetPage = document.getElementById(routes[pageId]);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                currentPage = pageId;
+
+                // Scroll to top
+                lenis.scrollTo(0, { immediate: true });
+
+                // Update URL
+                if (pushState) {
+                    history.pushState({ page: pageId }, '', '#' + pageId);
+                }
+
+                // Update active nav
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + pageId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Update WhatsApp message
+                updateWhatsAppMessage(pageId);
+
+                // Update footer suggestions
+                updateFooterSuggestions(pageId);
+
+                // Re-init animations for new page
+                setTimeout(() => {
+                    initPageAnimations();
+                }, 100);
+            }
+
+            // Close mobile menu
+            document.getElementById('mobile-menu').classList.remove('open');
+        }
+
+        // Handle nav clicks
+        document.querySelectorAll('[data-nav]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    navigateTo(href.substring(1));
+                }
+            });
+        });
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', (e) => {
+            const page = e.state ? e.state.page : 'home';
+            navigateTo(page, false);
+        });
+
+        // Handle initial hash
+        if (window.location.hash) {
+            const pageId = window.location.hash.substring(1);
+            navigateTo(pageId, false);
+        }
+
+        // ==================== WHATSAPP DYNAMIC MESSAGE ====================
+        function updateWhatsAppMessage(pageId) {
+            const btn = document.getElementById('whatsapp-btn');
+            let message = 'Hello Abdul Aziz Habib Cleaning Service, I would like to inquire about your cleaning services in Ras Al Khaimah.';
+
+            if (pageId.startsWith('service-')) {
+                const serviceName = serviceNames[pageId] || 'cleaning services';
+                message = `Hello Abdul Aziz Habib Cleaning Service, I am interested in your ${serviceName} service in Ras Al Khaimah. Could you please provide more information and a quote?`;
+            } else if (pageId === 'contact') {
+                message = 'Hello Abdul Aziz Habib Cleaning Service, I visited your contact page and would like to discuss a cleaning project in Ras Al Khaimah.';
+            } else if (pageId === 'gallery') {
+                message = 'Hello Abdul Aziz Habib Cleaning Service, I saw your project gallery and am impressed. I would like to discuss a cleaning project in Ras Al Khaimah.';
+            } else if (pageId === 'about') {
+                message = 'Hello Abdul Aziz Habib Cleaning Service, I learned about your company and would like to hire your cleaning services in Ras Al Khaimah.';
+            }
+
+            const encodedMsg = encodeURIComponent(message);
+            btn.href = `https://wa.me/971558786055?text=${encodedMsg}`;
+        }
+
+        // ==================== DYNAMIC FOOTER SUGGESTIONS ====================
+        function updateFooterSuggestions(pageId) {
+            const container = document.getElementById('suggestion-cards');
+            container.innerHTML = '';
+
+            let suggestions = [];
+
+            if (pageId.startsWith('service-')) {
+                const currentIndex = serviceOrder.indexOf(pageId);
+                const nextIndex = (currentIndex + 1) % serviceOrder.length;
+                const prevIndex = (currentIndex - 1 + serviceOrder.length) % serviceOrder.length;
+                suggestions = [serviceOrder[nextIndex], serviceOrder[prevIndex]];
+            } else if (pageId === 'home' || pageId === 'about') {
+                suggestions = ['service-villas', 'service-sofa', 'service-floors'];
+            } else if (pageId === 'services') {
+                suggestions = ['service-villas', 'service-glass', 'service-buildings'];
+            } else if (pageId === 'gallery') {
+                suggestions = ['service-villas', 'service-floors', 'service-glass'];
+            } else if (pageId === 'contact') {
+                suggestions = ['service-villas', 'service-sofa', 'service-carpet'];
+            }
+
+            suggestions.slice(0, 3).forEach(svc => {
+                const name = serviceNames[svc];
+                const card = document.createElement('a');
+                card.href = '#' + svc;
+                card.className = 'suggestion-card flex items-center gap-3 p-3 rounded-xl';
+                card.setAttribute('data-nav', '');
+                card.innerHTML = `
+                    <div class="w-10 h-10 rounded-lg bg-cyan-clean/10 flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-arrow-right text-cyan-clean text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="text-sm font-medium text-aluminum">${name}</div>
+                        <div class="text-xs text-aluminum/40">Explore service</div>
+                    </div>
+                `;
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navigateTo(svc);
+                });
+                container.appendChild(card);
+            });
+        }
+
+        // ==================== MOBILE MENU ====================
+        document.getElementById('mobile-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.add('open');
+        });
+
+        document.getElementById('mobile-close').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.remove('open');
+        });
+
+        // ==================== HEADER SCROLL EFFECT ====================
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('shadow-lg', 'shadow-cyan-clean/5');
+            } else {
+                header.classList.remove('shadow-lg', 'shadow-cyan-clean/5');
+            }
+
+            lastScroll = currentScroll;
+        }, { passive: true });
+
+        // ==================== FORM SUBMISSION (PEAK-END) ====================
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+
+            // Morph to sparkle
+            btn.classList.add('morphing');
+
+            setTimeout(() => {
+                btn.classList.remove('morphing');
+                btn.classList.add('success');
+                btn.style.background = '#10B981';
+
+                setTimeout(() => {
+                    btn.classList.remove('success');
+                    btn.style.background = '';
+                    document.getElementById('contact-form').reset();
+                }, 2000);
+            }, 800);
+        });
+
+        // ==================== PARTICLES CANVAS ====================
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationId;
+
+        function resizeCanvas() {
+            const hero = canvas.parentElement;
+            canvas.width = hero.offsetWidth;
+            canvas.height = hero.offsetHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0, 212, 255, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.min(50, Math.floor(canvas.width * canvas.height / 15000));
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // Draw connections
+            particles.forEach((p1, i) => {
+                particles.slice(i + 1).forEach(p2 => {
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(0, 212, 255, ${0.1 * (1 - dist / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                });
+            });
+
+            animationId = requestAnimationFrame(animateParticles);
+        }
+
+        resizeCanvas();
+        initParticles();
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
+
+        // ==================== GSAP ANIMATIONS ====================
+        gsap.registerPlugin(ScrollTrigger);
+
+        function initPageAnimations() {
+            // Kill existing triggers
+            ScrollTrigger.getAll().forEach(t => t.kill());
+
+            // Hero animations (only on home)
+            if (currentPage === 'home') {
+                gsap.from('.hero-badge', { opacity: 0, y: 30, duration: 0.8, delay: 0.2 });
+                gsap.from('.hero-title', { opacity: 0, y: 50, duration: 1, delay: 0.4 });
+                gsap.from('.hero-subtitle', { opacity: 0, y: 30, duration: 0.8, delay: 0.6 });
+                gsap.from('.hero-cta', { opacity: 0, y: 30, duration: 0.8, delay: 0.8 });
+                gsap.from('.hero-stats > div', { opacity: 0, y: 30, duration: 0.6, stagger: 0.1, delay: 1 });
+
+                // Animate stat counters
+                document.querySelectorAll('.stat-number').forEach(stat => {
+                    const target = parseInt(stat.dataset.count);
+                    gsap.to(stat, {
+                        innerText: target,
+                        duration: 2,
+                        delay: 1.2,
+                        snap: { innerText: 1 },
+                        ease: 'power2.out'
+                    });
+                });
+
+                // Hero background parallax
+                gsap.to('.hero-bg-img', {
+                    yPercent: 20,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '#page-home',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+            }
+
+            // Wipe reveal animations for all pages
+            document.querySelectorAll('.page-section.active .wipe-reveal, .page-section.active h2, .page-section.active h3, .page-section.active p, .page-section.active .service-card, .page-section.active .bento-item').forEach((el, i) => {
+                gsap.from(el, {
+                    opacity: 0,
+                    y: 40,
+                    duration: 0.8,
+                    delay: i * 0.05,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    }
+                });
+            });
+
+            // Service cards stagger
+            gsap.from('.page-section.active .service-card', {
+                opacity: 0,
+                y: 60,
+                duration: 0.8,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: '.page-section.active .service-card',
+                    start: 'top 85%'
+                }
+            });
+
+            // Bento grid items
+            gsap.from('.page-section.active .bento-item', {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.6,
+                stagger: 0.08,
+                scrollTrigger: {
+                    trigger: '.bento-grid',
+                    start: 'top 80%'
+                }
+            });
+        }
+
+        // Init animations on load
+        setTimeout(initPageAnimations, 100);
+
+        // ==================== INITIAL SETUP ====================
+        updateWhatsAppMessage('home');
+        updateFooterSuggestions('home');
+    </script>
+</body>
+</html>
