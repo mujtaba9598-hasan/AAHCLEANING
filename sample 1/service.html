@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | Abdul Aziz Habib Cleaning Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { deepNavy: '#050A18', aluminum: '#E5E5E5', cyanClean: '#00E5FF' }, fontFamily: { sans: ['Inter', 'sans-serif'], } } } }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-deepNavy text-aluminum font-sans antialiased">
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="assets/images/logo.png" alt="Abdul Aziz Habib Logo" class="h-12 w-auto bg-white rounded-full p-1">
+                    <span class="font-bold text-xl tracking-tight hidden sm:block">Abdul Aziz Habib<br><span class="text-xs text-cyanClean font-normal tracking-widest uppercase">Cleaning Service</span></span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-cyanClean transition-colors duration-200">Home</a>
+                    <a href="about.html" class="hover:text-cyanClean transition-colors duration-200">About</a>
+                    <a href="services.html" class="text-cyanClean hover:text-white transition-colors duration-200">Services</a>
+                    <a href="gallery.html" class="hover:text-cyanClean transition-colors duration-200">Gallery</a>
+                    <a href="contact.html" class="hover:text-cyanClean transition-colors duration-200">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="wipe-reveal">
+                <!-- Dynamic H1 -->
+                <h1 id="service-title" class="text-4xl md:text-5xl font-bold mb-6">Cleaning Services in Ras Al Khaimah: <span class="text-cyanClean" id="service-name">Service</span></h1>
+                <p id="service-desc" class="text-lg text-aluminum/80 mb-8">Loading service details...</p>
+                <a href="contact.html" class="inline-block bg-cyanClean text-deepNavy font-semibold px-8 py-4 rounded-sm hover:bg-white transition-all duration-300">Get a Quote</a>
+            </div>
+            <div class="wipe-reveal overflow-hidden rounded-lg h-96 relative">
+                <!-- Dynamic Image -->
+                <img id="service-img" src="assets/images/hero-villa.png" alt="Service Image" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Dynamic Service Footer for next step -->
+        <div class="mt-24 pt-12 border-t border-white/10 text-center wipe-reveal">
+            <p class="text-aluminum/60 mb-4">Looking for something else?</p>
+            <h3 class="text-2xl font-bold">Try our <a href="services.html" class="text-cyanClean hover:underline">Other Specialized Services</a></h3>
+        </div>
+    </main>
+    
+    <a href="https://wa.me/971558786055" id="wa-floating-btn" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/></svg>
+    </a>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Dynamic content injection based on URL
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type') || 'general';
+            
+            const data = {
+                'sofa': { name: 'Sofa Cleaning', desc: 'Our deep steam extraction method completely revitalizes your fabric and leather furniture, removing deep-seated dust mites, allergens, and stains without damaging the material.', img: 'assets/images/macro-sofa.png' },
+                'carpet': { name: 'Carpet Cleaning', desc: 'We use industrial-grade rotary scrubbers and hot water extraction to lift heavy dirt from carpet fibers, leaving them fresh, soft, and hygienic.', img: 'assets/images/macro-sofa.png' }, // reusing sofa as texture
+                'glass': { name: 'Glass & Windows', desc: 'From residential villas to high-rise commercial buildings, our high-pressure washing and pure water systems ensure a streak-free, crystal-clear finish on all glass surfaces.', img: 'assets/images/macro-glass.png' },
+                'floor': { name: 'Floor Scrubbing', desc: 'We specialize in polishing, scrubbing, and restoring marble, porcelain, and wood parquet flooring, bringing back their original deep satin glow.', img: 'assets/images/macro-floor.png' },
+                'villa': { name: 'Villa Cleaning', desc: 'A comprehensive top-to-bottom cleaning service perfect for move-ins, move-outs, or deep spring cleaning of luxury properties in RAK.', img: 'assets/images/hero-villa.png' },
+                'commercial': { name: 'Commercial & Shops', desc: 'Maintain a pristine environment for your customers. We handle retail boutiques, mall outlets, and exhibition stands with absolute professionalism.', img: 'assets/images/retail-shop.png' },
+                'general': { name: 'Specialized Cleaning', desc: 'We offer a wide range of custom cleaning solutions tailored to your specific requirements.', img: 'assets/images/hero-villa.png' }
+            };
+
+            const info = data[type] || data['general'];
+            
+            document.getElementById('service-name').textContent = info.name;
+            document.getElementById('service-desc').textContent = info.desc;
+            document.getElementById('service-img').src = info.img;
+            document.title = `${info.name} | Abdul Aziz Habib Cleaning`;
+        });
+    </script>
+</body>
+</html>

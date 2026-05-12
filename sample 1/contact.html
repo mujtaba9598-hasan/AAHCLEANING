@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Abdul Aziz Habib Cleaning Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { deepNavy: '#050A18', aluminum: '#E5E5E5', cyanClean: '#00E5FF' }, fontFamily: { sans: ['Inter', 'sans-serif'], } } } }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-deepNavy text-aluminum font-sans antialiased">
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="assets/images/logo.png" alt="Abdul Aziz Habib Logo" class="h-12 w-auto bg-white rounded-full p-1">
+                    <span class="font-bold text-xl tracking-tight hidden sm:block">Abdul Aziz Habib<br><span class="text-xs text-cyanClean font-normal tracking-widest uppercase">Cleaning Service</span></span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-cyanClean transition-colors duration-200">Home</a>
+                    <a href="about.html" class="hover:text-cyanClean transition-colors duration-200">About</a>
+                    <a href="services.html" class="hover:text-cyanClean transition-colors duration-200">Services</a>
+                    <a href="gallery.html" class="hover:text-cyanClean transition-colors duration-200">Gallery</a>
+                    <a href="contact.html" class="text-cyanClean hover:text-white transition-colors duration-200">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 wipe-reveal">
+            <div>
+                <h1 class="text-5xl font-bold mb-6">Let's Discuss Your <span class="text-cyanClean">Cleaning Needs</span></h1>
+                <p class="text-lg text-aluminum/80 mb-12">Whether you need an urgent villa deep clean or a long-term commercial contract, our team is ready to provide a customized quote.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-cyanClean text-xl">📞</div>
+                        <div>
+                            <p class="text-sm text-aluminum/50 uppercase">Phone</p>
+                            <p class="font-bold text-lg">056 958 6168</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-cyanClean text-xl">💬</div>
+                        <div>
+                            <p class="text-sm text-aluminum/50 uppercase">WhatsApp</p>
+                            <p class="font-bold text-lg">055 878 6055</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-cyanClean text-xl">✉️</div>
+                        <div>
+                            <p class="text-sm text-aluminum/50 uppercase">Email</p>
+                            <p class="font-bold text-lg">abdulaziz21031987@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white/5 p-8 rounded-lg border border-white/10">
+                <form onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                        <input type="text" id="name" required class="w-full bg-deepNavy border border-white/20 rounded px-4 py-3 text-white focus:outline-none focus:border-cyanClean transition-colors">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" required class="w-full bg-deepNavy border border-white/20 rounded px-4 py-3 text-white focus:outline-none focus:border-cyanClean transition-colors">
+                    </div>
+                    <div>
+                        <label for="service" class="block text-sm font-medium mb-2">Service Required</label>
+                        <select id="service" class="w-full bg-deepNavy border border-white/20 rounded px-4 py-3 text-white focus:outline-none focus:border-cyanClean transition-colors">
+                            <option>Villa Cleaning</option>
+                            <option>Sofa & Carpet Cleaning</option>
+                            <option>Glass Cleaning</option>
+                            <option>Commercial Cleaning</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" id="submit-btn" class="w-full bg-cyanClean text-deepNavy font-bold py-4 rounded-lg hover:bg-white transition-all btn-morph flex justify-center items-center h-14">
+                            Request Quote
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Dynamic Footer -->
+    <footer class="bg-[#02050b] pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-aluminum/50">
+                <p>&copy; 2026 Abdul Aziz Habib Cleaning Service. All rights reserved.</p>
+                <p>powered by <a href="mailto:hello@quartermasters.me" class="hover:text-cyanClean transition-colors">Quartermasters F.Z.C</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

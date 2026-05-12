@@ -1,0 +1,13 @@
+# Claude Code / local tooling — not part of the site
+.claude/
+settings.json
+claude_to_gemini.md
+gemini_to_claude.md
+claude_to_Gemini_Graphics_CommCenter.md
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.code-workspace
+sample 2/_imgtmp/

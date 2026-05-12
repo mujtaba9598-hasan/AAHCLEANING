@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Gallery | Abdul Aziz Habib Cleaning Service — Ras Al Khaimah</title>
+<meta name="description" content="Before-and-after results from cleaning jobs across Ras Al Khaimah — sofas, carpets, villas, offices and glass. Filter by category and see the difference for yourself.">
+<link rel="canonical" href="https://example.com/projects.html">
+<meta name="theme-color" content="#0A0F1E">
+<meta property="og:type" content="website"><meta property="og:title" content="Project Gallery — Abdul Aziz Habib Cleaning Service"><meta property="og:description" content="Real before/after cleaning results from villas, apartments, offices and shops in RAK."><meta property="og:image" content="assets/images/projects/villa-1.jpg">
+<meta property="og:image" content="assets/logo/logo.png">
+<meta property="og:image:alt" content="Abdul Aziz Habib Cleaning Service logo">
+<meta property="og:site_name" content="Abdul Aziz Habib Cleaning Service">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/logo/logo.png">
+<link rel="icon" href="assets/logo/logo.png">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{bg:'#0A0F1E',surface:'#0D1B2A',card:'#112240',orange:'#E85D04',orange2:'#F48C06',muted:'#8899AA',ink:'#E8EDF2'},fontFamily:{display:['"Clash Display"','sans-serif'],sans:['Satoshi','ui-sans-serif','sans-serif']}}}};</script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:top-3 focus:left-3 focus:bg-orange focus:text-bg focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
+<div data-partial="header"></div>
+<main id="main">
+
+<section class="relative overflow-hidden pt-32 pb-10 lg:pt-40">
+  <div class="absolute inset-0 bg-grid"></div>
+  <div class="container-rail relative">
+    <p class="eyebrow mb-5">Project gallery</p>
+    <h1 class="font-display text-5xl md:text-6xl mb-4" data-stagger-words>The difference, in pictures.</h1>
+    <p class="text-lg muted measure">A selection of recent jobs across Ras Al Khaimah. Filter by category, then click any tile to open the before / after slider. <span class="text-orange2">(Real shoot photos arriving soon — placeholders for now.)</span></p>
+  </div>
+</section>
+
+<!-- sticky filter bar -->
+<div class="sticky top-20 z-40 bg-bg/85 backdrop-blur border-y" style="border-color:var(--line)">
+  <div class="container-rail py-3 flex flex-wrap gap-2">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="sofa">Sofas</button>
+    <button class="filter-tab" data-filter="carpet">Carpets</button>
+    <button class="filter-tab" data-filter="villa">Villas</button>
+    <button class="filter-tab" data-filter="office">Offices</button>
+    <button class="filter-tab" data-filter="glass">Glass</button>
+  </div>
+</div>
+
+<section class="section !pt-10">
+  <div class="container-rail">
+    <div class="masonry">
+      <!-- helper: each card has data-cat / data-before / data-after / data-title / data-loc; onerror falls back to a labelled placeholder -->
+      <article class="proj-card" data-cat="villa" data-before="assets/images/projects/villa-1-before.jpg" data-after="assets/images/projects/villa-1.jpg" data-title="Villa handover deep clean" data-loc="Al Hamra Village, RAK">
+        <img src="assets/images/projects/villa-1.jpg" alt="Spotless modern villa interior after a deep clean" loading="lazy" onerror="this.onerror=null;this.src='assets/images/hero-home.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Villa</span><h3 class="font-display text-lg">Villa handover deep clean</h3><p class="text-sm muted">Al Hamra Village, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="sofa" data-before="assets/images/projects/sofa-1-before.jpg" data-after="assets/images/projects/sofa-1.jpg" data-title="Fabric sofa set revival" data-loc="Mina Al Arab, RAK">
+        <img src="assets/images/projects/sofa-1.jpg" alt="Freshly cleaned fabric sofa set" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/sofa-cleaning.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Sofa</span><h3 class="font-display text-lg">Fabric sofa set revival</h3><p class="text-sm muted">Mina Al Arab, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="glass" data-before="assets/images/projects/glass-1-before.jpg" data-after="assets/images/projects/glass-1.jpg" data-title="Shopfront & partition glass" data-loc="Al Naeem, RAK">
+        <img src="assets/images/projects/glass-1.jpg" alt="Sparkling clean shopfront glass" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/window-glass.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Glass</span><h3 class="font-display text-lg">Shopfront &amp; partition glass</h3><p class="text-sm muted">Al Naeem, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="carpet" data-before="assets/images/projects/carpet-1-before.jpg" data-after="assets/images/projects/carpet-1.jpg" data-title="Living-room carpet extraction" data-loc="Khuzam, RAK">
+        <img src="assets/images/projects/carpet-1.jpg" alt="Bright, freshly extracted carpet" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/floor-walls.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Carpet</span><h3 class="font-display text-lg">Living-room carpet extraction</h3><p class="text-sm muted">Khuzam, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="office" data-before="assets/images/projects/office-1-before.jpg" data-after="assets/images/projects/office-1.jpg" data-title="After-hours office reset" data-loc="RAK Free Zone">
+        <img src="assets/images/projects/office-1.jpg" alt="Spotless modern office after a clean" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/office-shop.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Office</span><h3 class="font-display text-lg">After-hours office reset</h3><p class="text-sm muted">RAK Free Zone</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="villa" data-before="assets/images/projects/villa-2-before.jpg" data-after="assets/images/projects/villa-2.jpg" data-title="Marble staircase & hallway" data-loc="Al Nakheel, RAK">
+        <img src="assets/images/projects/villa-2.jpg" alt="Polished marble staircase" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/floor-walls.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Villa</span><h3 class="font-display text-lg">Marble staircase &amp; hallway</h3><p class="text-sm muted">Al Nakheel, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="sofa" data-before="assets/images/projects/sofa-2-before.jpg" data-after="assets/images/projects/sofa-2.jpg" data-title="Leather sofa clean & condition" data-loc="Julfar, RAK">
+        <img src="assets/images/projects/sofa-2.jpg" alt="Cleaned and conditioned leather sofa" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/sofa-cleaning.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Sofa</span><h3 class="font-display text-lg">Leather sofa clean &amp; condition</h3><p class="text-sm muted">Julfar, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="glass" data-before="assets/images/projects/glass-2-before.jpg" data-after="assets/images/projects/glass-2.jpg" data-title="Villa façade & balcony glass" data-loc="Mina Al Arab, RAK">
+        <img src="assets/images/projects/glass-2.jpg" alt="Clean villa façade and balcony glass" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/window-glass.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Glass</span><h3 class="font-display text-lg">Villa façade &amp; balcony glass</h3><p class="text-sm muted">Mina Al Arab, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="carpet" data-before="assets/images/projects/carpet-2-before.jpg" data-after="assets/images/projects/carpet-2.jpg" data-title="Rug deep clean — pet stains" data-loc="Al Qurm, RAK">
+        <img src="assets/images/projects/carpet-2.jpg" alt="Clean area rug after deep cleaning" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/floor-walls.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Carpet</span><h3 class="font-display text-lg">Rug deep clean — pet stains</h3><p class="text-sm muted">Al Qurm, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="office" data-before="assets/images/projects/office-2-before.jpg" data-after="assets/images/projects/office-2.jpg" data-title="Retail shop fit-out clean" data-loc="Al Hamra, RAK">
+        <img src="assets/images/projects/office-2.jpg" alt="Clean retail shop after fit-out" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/office-shop.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Office</span><h3 class="font-display text-lg">Retail shop fit-out clean</h3><p class="text-sm muted">Al Hamra, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="villa" data-before="assets/images/projects/villa-3-before.jpg" data-after="assets/images/projects/villa-3.jpg" data-title="Post-renovation villa clean" data-loc="Khuzam, RAK">
+        <img src="assets/images/projects/villa-3.jpg" alt="Dust-free villa after post-construction cleaning" loading="lazy" onerror="this.onerror=null;this.src='assets/images/hero-home.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Villa</span><h3 class="font-display text-lg">Post-renovation villa clean</h3><p class="text-sm muted">Khuzam, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="glass" data-before="assets/images/projects/glass-3-before.jpg" data-after="assets/images/projects/glass-3.jpg" data-title="Shower screen limescale removal" data-loc="Al Nakheel, RAK">
+        <img src="assets/images/projects/glass-3.jpg" alt="Crystal-clear shower screen after limescale removal" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/window-glass.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Glass</span><h3 class="font-display text-lg">Shower screen limescale removal</h3><p class="text-sm muted">Al Nakheel, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="sofa" data-before="assets/images/projects/sofa-3-before.jpg" data-after="assets/images/projects/sofa-3.jpg" data-title="Mattress sanitising — 3 rooms" data-loc="Al Hamra Village, RAK">
+        <img src="assets/images/projects/sofa-3.jpg" alt="Freshly sanitised mattresses" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/sofa-cleaning.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Upholstery</span><h3 class="font-display text-lg">Mattress sanitising — 3 rooms</h3><p class="text-sm muted">Al Hamra Village, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="carpet" data-before="assets/images/projects/carpet-3-before.jpg" data-after="assets/images/projects/carpet-3.jpg" data-title="Office carpet tiles — full floor" data-loc="RAK Free Zone">
+        <img src="assets/images/projects/carpet-3.jpg" alt="Clean office carpet tiles across a full floor" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/floor-walls.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Carpet</span><h3 class="font-display text-lg">Office carpet tiles — full floor</h3><p class="text-sm muted">RAK Free Zone</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+      <article class="proj-card" data-cat="office" data-before="assets/images/projects/office-3-before.jpg" data-after="assets/images/projects/office-3.jpg" data-title="Clinic deep clean & sanitise" data-loc="Al Naeem, RAK">
+        <img src="assets/images/projects/office-3.jpg" alt="Spotless clinic reception after a deep clean" loading="lazy" onerror="this.onerror=null;this.src='assets/images/services/office-shop.png'">
+        <div class="proj-overlay"><span class="text-xs uppercase tracking-widest text-orange2">Commercial</span><h3 class="font-display text-lg">Clinic deep clean &amp; sanitise</h3><p class="text-sm muted">Al Naeem, RAK</p><span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange2">View before / after <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </article>
+    </div>
+    <p class="muted text-center mt-8 text-sm">More work, including full sets of shoot photos, will be added here. Want a job featured? <a href="contact.html" class="text-orange2 underline">Tell us.</a></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0" style="background:linear-gradient(115deg,#7a2f02 0%,#E85D04 45%,#F48C06 100%)"></div>
+  <div class="container-rail relative py-16 flex flex-col lg:flex-row items-center justify-between gap-6 text-bg">
+    <h2 class="font-display text-3xl md:text-4xl">Want results like these?</h2>
+    <div class="flex flex-wrap gap-3"><a href="booking.html" class="btn !bg-bg !text-ink">Request a quote</a><a href="https://wa.me/971558786055" target="_blank" rel="noopener" class="btn !bg-[#0A0F1E] !text-ink">Chat on WhatsApp</a></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" data-lightbox role="dialog" aria-modal="true" aria-label="Project before and after">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <div class="max-w-4xl w-full">
+    <div class="ba aspect-[16/10]" data-ba aria-label="Before and after">
+      <img class="ba-after" src="" alt="After cleaning">
+      <div class="ba-before-wrap"><img src="" alt="Before cleaning"></div>
+      <div class="ba-handle" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Drag to compare"></div>
+      <span class="ba-tag left">Before</span><span class="ba-tag right">After</span>
+    </div>
+    <p data-lb-title class="text-center mt-3 text-sm muted"></p>
+  </div>
+</div>
+
+</main>
+<div data-partial="footer"></div>
+<script src="js/partials.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/before-after.js" defer></script>
+<script src="js/gallery.js" defer></script>
+</body>
+</html>

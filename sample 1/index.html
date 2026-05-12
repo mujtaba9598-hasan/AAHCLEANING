@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Aziz Habib Cleaning Service | Premium Cleaning in RAK</title>
+    <meta name="description" content="Premium cleaning services in Ras Al Khaimah for villas, buildings, shops, and furniture.">
+    <!-- Tailwind CSS (v3 CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepNavy: '#050A18',
+                        aluminum: '#E5E5E5',
+                        cyanClean: '#00E5FF'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- GSAP & Lenis -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-deepNavy text-aluminum font-sans antialiased">
+
+    <!-- Sticky Navigation -->
+    <header class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="assets/images/logo.png" alt="Abdul Aziz Habib Logo" class="h-12 w-auto bg-white rounded-full p-1">
+                    <span class="font-bold text-xl tracking-tight hidden sm:block">Abdul Aziz Habib<br><span class="text-xs text-cyanClean font-normal tracking-widest uppercase">Cleaning Service</span></span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-cyanClean hover:text-white transition-colors duration-200">Home</a>
+                    <a href="about.html" class="hover:text-cyanClean transition-colors duration-200">About</a>
+                    <a href="services.html" class="hover:text-cyanClean transition-colors duration-200">Services</a>
+                    <a href="gallery.html" class="hover:text-cyanClean transition-colors duration-200">Gallery</a>
+                    <a href="contact.html" class="hover:text-cyanClean transition-colors duration-200">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0 wipe-reveal">
+                <img src="assets/images/hero-villa.png" alt="Luxury Villa Cleaning in Ras Al Khaimah" class="w-full h-full object-cover opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-t from-deepNavy via-deepNavy/50 to-transparent"></div>
+            </div>
+            
+            <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-20">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white wipe-reveal">
+                    Premium <span class="text-cyanClean">Cleaning Services</span> in Ras Al Khaimah
+                </h1>
+                <p class="text-lg md:text-2xl mb-10 text-aluminum/80 max-w-2xl mx-auto wipe-reveal" style="transition-delay: 200ms;">
+                    Crystal precision cleaning for luxury villas, commercial spaces, and premium interiors.
+                </p>
+                <div class="wipe-reveal" style="transition-delay: 400ms;">
+                    <a href="services.html" class="inline-block bg-cyanClean text-deepNavy font-semibold px-8 py-4 rounded-sm hover:bg-white transition-all duration-300 transform hover:-translate-y-1">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Brands Ticker -->
+        <section class="py-12 bg-white/5 border-y border-white/10">
+            <div class="max-w-7xl mx-auto px-4 mb-4 text-center">
+                <p class="text-sm text-aluminum/50 uppercase tracking-widest">Powered by Premium Equipment</p>
+            </div>
+            <div class="ticker-wrap relative w-full h-20">
+                <!-- Inner div needs to be wide enough to contain 2 sets of logos for seamless loop -->
+                <div class="ticker-move flex items-center gap-20 px-10">
+                    <!-- Set 1 -->
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-yellow-400 transition-colors duration-500 cursor-default">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z"/></svg> KÄRCHER
+                    </div>
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-blue-500 transition-colors duration-500 cursor-default">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg> DIVERSEY
+                    </div>
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-green-500 transition-colors duration-500 cursor-default">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1-11v4h2v-4h3l-4-5-4 5h3z"/></svg> ECOLAB
+                    </div>
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-orange-500 transition-colors duration-500 cursor-default">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16 16V5H5v14h14zm-4-4H9v-2h6v2zm0-4H9V9h6v2z"/></svg> TASKI
+                    </div>
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-red-600 transition-colors duration-500 cursor-default">
+                        <span class="text-4xl font-black">3M</span>
+                    </div>
+                    <!-- Set 2 (Duplicate for seamless loop) -->
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-yellow-400 transition-colors duration-500 cursor-default">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z"/></svg> KÄRCHER
+                    </div>
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-blue-500 transition-colors duration-500 cursor-default">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg> DIVERSEY
+                    </div>
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-green-500 transition-colors duration-500 cursor-default">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1-11v4h2v-4h3l-4-5-4 5h3z"/></svg> ECOLAB
+                    </div>
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-orange-500 transition-colors duration-500 cursor-default">
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16 16V5H5v14h14zm-4-4H9v-2h6v2zm0-4H9V9h6v2z"/></svg> TASKI
+                    </div>
+                    <div class="group flex items-center gap-2 text-2xl font-bold text-aluminum/30 hover:text-red-600 transition-colors duration-500 cursor-default">
+                        <span class="text-4xl font-black">3M</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Teaser -->
+        <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 wipe-reveal">
+                <h2 class="text-4xl font-bold mb-4">Our Expertise</h2>
+                <p class="text-aluminum/70 max-w-2xl mx-auto">From deep carpet cleaning to high-rise glass washing, we bring the best tools and techniques to every job.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Teaser 1 -->
+                <a href="services.html#residential" class="group relative overflow-hidden rounded-lg block h-80 wipe-reveal">
+                    <img src="assets/images/macro-sofa.png" alt="Sofa Cleaning" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-deepNavy/60 group-hover:bg-deepNavy/40 transition-colors duration-500 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Furniture & Fabrics</h3>
+                        <p class="text-cyanClean opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Deep Steam Cleaning &rarr;</p>
+                    </div>
+                </a>
+                <!-- Teaser 2 -->
+                <a href="services.html#commercial" class="group relative overflow-hidden rounded-lg block h-80 wipe-reveal" style="transition-delay: 100ms;">
+                    <img src="assets/images/retail-shop.png" alt="Retail Shop Cleaning" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-deepNavy/60 group-hover:bg-deepNavy/40 transition-colors duration-500 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Commercial Spaces</h3>
+                        <p class="text-cyanClean opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">Retail & Exhibitions &rarr;</p>
+                    </div>
+                </a>
+                <!-- Teaser 3 -->
+                <a href="services.html#exterior" class="group relative overflow-hidden rounded-lg block h-80 wipe-reveal" style="transition-delay: 200ms;">
+                    <img src="assets/images/macro-glass.png" alt="Glass Facade Cleaning" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-deepNavy/60 group-hover:bg-deepNavy/40 transition-colors duration-500 flex flex-col justify-end p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Exterior & Glass</h3>
+                        <p class="text-cyanClean opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">High-Pressure Washing &rarr;</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-24 bg-white/5 border-y border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 wipe-reveal">
+                    <h2 class="text-4xl font-bold mb-4">Client Feedback</h2>
+                    <p class="text-aluminum/70 max-w-2xl mx-auto">What our diverse clientele in Ras Al Khaimah says about our service quality.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 (Pakistani) -->
+                    <div class="bg-deepNavy p-8 border border-white/10 rounded-lg relative wipe-reveal">
+                        <div class="text-cyanClean text-4xl font-serif absolute top-4 right-6 opacity-30">"</div>
+                        <p class="mb-6 text-aluminum/80">"The level of detail is unmatched. They handled our new villa cleaning before we moved in, and the marble floors were literally shining like glass. Highly professional team."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-xl font-bold">F</div>
+                            <div>
+                                <h4 class="font-bold">Faisal Rehman</h4>
+                                <p class="text-sm text-aluminum/50">Villa Owner, Mina Al Arab</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 (Egyptian) -->
+                    <div class="bg-deepNavy p-8 border border-white/10 rounded-lg relative wipe-reveal" style="transition-delay: 100ms;">
+                        <div class="text-cyanClean text-4xl font-serif absolute top-4 right-6 opacity-30">"</div>
+                        <p class="mb-6 text-aluminum/80">"We contracted them for our exhibition stand at RAK Expo. They maintained absolute cleanliness throughout the 3-day event. Reliable and extremely polite staff."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-xl font-bold">A</div>
+                            <div>
+                                <h4 class="font-bold">Amr El-Sayed</h4>
+                                <p class="text-sm text-aluminum/50">Events Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 (Russian) -->
+                    <div class="bg-deepNavy p-8 border border-white/10 rounded-lg relative wipe-reveal" style="transition-delay: 200ms;">
+                        <div class="text-cyanClean text-4xl font-serif absolute top-4 right-6 opacity-30">"</div>
+                        <p class="mb-6 text-aluminum/80">"I needed deep sofa and carpet cleaning after hosting a party. They arrived with premium equipment and removed stains I thought were permanent. Fantastic job!"</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-xl font-bold">E</div>
+                            <div>
+                                <h4 class="font-bold">Elena Volkov</h4>
+                                <p class="text-sm text-aluminum/50">Resident, Al Hamra Village</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <footer class="bg-[#02050b] pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="assets/images/logo.png" alt="Abdul Aziz Habib Logo" class="h-16 w-auto bg-white rounded-lg p-2 mb-6 mx-auto md:mx-0">
+                    <p class="text-aluminum/70 max-w-sm mx-auto md:mx-0">Professional cleaning services specializing in residential, commercial, and post-construction cleaning in Dubai and Ras Al Khaimah.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Quick Links</h4>
+                    <ul class="space-y-3 text-aluminum/70">
+                        <li><a href="about.html" class="hover:text-cyanClean transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-cyanClean transition-colors">Our Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-cyanClean transition-colors">Project Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-cyanClean transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Contact Info</h4>
+                    <ul class="space-y-3 text-aluminum/70">
+                        <li>📞 0569586168</li>
+                        <li>💬 0558786055 (WhatsApp)</li>
+                        <li>✉️ abdulaziz21031987@gmail.com</li>
+                        <li>📍 Dubai / RAK, UAE</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-aluminum/50">
+                <p>&copy; 2026 Abdul Aziz Habib Cleaning Service. All rights reserved.</p>
+                <p>powered by <a href="mailto:hello@quartermasters.me" class="hover:text-cyanClean transition-colors">Quartermasters F.Z.C</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/971558786055" id="wa-floating-btn" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/></svg>
+    </a>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

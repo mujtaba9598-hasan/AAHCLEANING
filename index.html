@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdul Aziz Habib Cleaning Service — Website Design Samples</title>
+<meta name="description" content="Choose a website design to preview for Abdul Aziz Habib Cleaning Service, Ras Al Khaimah.">
+<meta name="theme-color" content="#0A0F1E">
+<link rel="icon" href="logo.png">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0A0F1E;--surface:#0D1B2A;--card:#112240;--line:rgba(232,237,242,.10);--ink:#E8EDF2;--muted:#8899AA;--orange:#E85D04;--orange2:#F48C06;--cyan:#00E5FF;--glow:rgba(232,93,4,.3)}
+  body{font-family:'Satoshi',ui-sans-serif,system-ui,sans-serif;background:radial-gradient(120% 70% at 50% 0%,#11203a 0%,var(--bg) 55%);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 20px;line-height:1.6}
+  h1,h2,h3,.disp{font-family:'Clash Display','Satoshi',sans-serif;line-height:1.1;letter-spacing:-.01em}
+  a{text-decoration:none;color:inherit}
+  .bg-grid{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(232,237,242,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(232,237,242,.04) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 75%)}
+  .wrap{max-width:880px;width:100%}
+  .head{text-align:center;margin-bottom:42px}
+  .logo{height:72px;width:72px;border-radius:16px;background:#fff;padding:8px;margin:0 auto 18px;box-shadow:0 18px 44px -16px var(--glow)}
+  .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--orange2);margin-bottom:14px}
+  .eyebrow::before,.eyebrow::after{content:"";width:1.6rem;height:1px;background:var(--orange)}
+  .head h1{font-size:2.6rem;font-weight:600;margin-bottom:10px}
+  .head h1 span{background:linear-gradient(100deg,var(--orange),var(--orange2) 60%,#ffb877);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .head p{color:var(--muted);max-width:560px;margin:0 auto}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,93,4,.12);color:var(--orange2);border:1px solid rgba(232,93,4,.3);padding:6px 16px;border-radius:9999px;font-size:.78rem;font-weight:600;margin-top:16px;letter-spacing:.03em}
+  .grid{display:grid;grid-template-columns:1fr;gap:18px}
+  .card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:18px;transition:transform .25s ease,box-shadow .3s ease,border-color .25s ease}
+  .card:hover{transform:translateY(-5px);border-color:rgba(232,93,4,.45);box-shadow:0 30px 60px -28px var(--glow),0 0 0 1px rgba(232,93,4,.2)}
+  .card .top{height:8px;width:100%}
+  .card.s1 .top{background:linear-gradient(90deg,#050A18,#00E5FF)}
+  .card.s2 .top{background:linear-gradient(90deg,#7a2f02,#E85D04 50%,#F48C06)}
+  .card.s1:hover{border-color:rgba(0,229,255,.4);box-shadow:0 30px 60px -28px rgba(0,229,255,.3),0 0 0 1px rgba(0,229,255,.2)}
+  .body{padding:26px 28px;display:flex;align-items:center;gap:22px}
+  .ico{width:64px;height:64px;border-radius:16px;flex:none;display:grid;place-items:center;font-family:'Clash Display',sans-serif;font-size:1.5rem;font-weight:700}
+  .card.s1 .ico{background:rgba(0,229,255,.12);color:var(--cyan)}
+  .card.s2 .ico{background:rgba(232,93,4,.14);color:var(--orange2)}
+  .info{flex:1;min-width:0}
+  .info h3{font-size:1.3rem;font-weight:600;margin-bottom:5px}
+  .info p{font-size:.92rem;color:var(--muted);line-height:1.55}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .tag{display:inline-flex;align-items:center;gap:5px;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:9999px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--muted)}
+  .card.s1 .tag.accent{background:rgba(0,229,255,.1);border-color:rgba(0,229,255,.3);color:var(--cyan)}
+  .card.s2 .tag.accent{background:rgba(232,93,4,.1);border-color:rgba(232,93,4,.3);color:var(--orange2)}
+  .arrow{flex:none;color:var(--muted);font-size:1.4rem;transition:transform .25s ease,color .25s ease}
+  .card:hover .arrow{transform:translateX(4px)}
+  .card.s1:hover .arrow{color:var(--cyan)} .card.s2:hover .arrow{color:var(--orange2)}
+  .foot{text-align:center;margin-top:34px;font-size:.78rem;color:var(--muted)}
+  .foot a{color:var(--orange2)}
+  @media(max-width:640px){.body{padding:18px 20px;gap:16px;flex-wrap:wrap}.ico{width:52px;height:52px;font-size:1.2rem}.head h1{font-size:1.9rem}.arrow{display:none}.logo{height:60px;width:60px}}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="wrap">
+
+  <div class="head">
+    <img src="logo.png" alt="Abdul Aziz Habib Cleaning Service" class="logo">
+    <p class="eyebrow">Abdul Aziz Habib · Cleaning Service · RAK</p>
+    <h1>Website <span>design samples</span></h1>
+    <p>Two directions for the Abdul Aziz Habib Cleaning Service website. Open either one to preview the live pages.</p>
+    <span class="badge">2 designs · pick one to preview</span>
+  </div>
+
+  <div class="grid">
+
+    <a href="sample 2/index.html" class="card s2">
+      <div class="top"></div>
+      <div class="body">
+        <div class="ico">02</div>
+        <div class="info">
+          <h3>Sample 2 — Deep Orange (full site)</h3>
+          <p>Dark navy &amp; deep-orange theme. Clash Display + Satoshi. Cinematic hero with before/after slider, B&amp;W→colour equipment-brand ticker, 60+ filterable services, FAQs, project gallery, booking flow, animated loader, full SEO &amp; structured data.</p>
+          <div class="tags">
+            <span class="tag accent">15 pages</span>
+            <span class="tag">Home · About · Services · Projects</span>
+            <span class="tag">7 service pages</span>
+            <span class="tag">FAQ · Contact · Booking</span>
+            <span class="tag">SEO-ready</span>
+          </div>
+        </div>
+        <div class="arrow">&rarr;</div>
+      </div>
+    </a>
+
+    <a href="sample 1/index.html" class="card s1">
+      <div class="top"></div>
+      <div class="body">
+        <div class="ico">01</div>
+        <div class="info">
+          <h3>Sample 1 — Cyan Clean (original concept)</h3>
+          <p>The first direction: deep-navy &amp; cyan theme, Inter type, GSAP wipe-reveal animations, premium-equipment ticker, testimonials. A leaner 5-page concept site.</p>
+          <div class="tags">
+            <span class="tag accent">5 pages</span>
+            <span class="tag">Home · About · Services</span>
+            <span class="tag">Gallery · Contact</span>
+          </div>
+        </div>
+        <div class="arrow">&rarr;</div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="foot">
+    Abdul Aziz Habib Cleaning Service — website samples &nbsp;·&nbsp; powered by <a href="mailto:hello@quartermasters.me">Quartermasters F.Z.C</a>
+  </div>
+
+</div>
+</body>
+</html>
